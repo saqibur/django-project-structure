@@ -6,13 +6,6 @@ The project is meant to be easily clonable, and used as the starter template for
 the next big thing our team develops.
 
 
-## Disclaimer
-* I don't have 10 years of experience, nor do I have access to people with 10
-years of experience. What I do have is good reference material - books,
-conferences, and documentation. These people are smarter than me, they are
-better developers and they have more experience - I'm somewhat collecting and
-presenting what they do.
-
 ## Scope
 Develop a structure for both `django-rest-framework` and `django` projects.
 Easily clonable when starting new projects
@@ -164,4 +157,4 @@ environments
 - [Cookiecutter Django](https://github.com/cookiecutter/cookiecutter-django)
 - [HackSoft Django Style Guide](https://github.com/HackSoftware/Django-Styleguide)
 - [Radoslav Georgiev - Django Structure for Scale and Longevity](https://www.youtube.com/watch?v=yG3ZdxBb1oo)
-- Vaccina Backend Projects (namely `backend-healthcheck`, thank you!)
+- Vaccina Backend Projects (namely `backend-healthcheck`)
