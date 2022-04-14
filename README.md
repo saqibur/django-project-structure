@@ -136,6 +136,14 @@ For different API versions, we're assuming the following will change:
 
 Whereas the `model`s will be shared.
 
+* How do you define a version 2?
+
+Currently we're proposing that major changes to the following, constitutes a new API version:
+1. Representation of data, either for submission or retrieval
+2. Major optimizations
+3. Major code reorganization and code refactor
+
+
 ### `config`
 * Contains project configuration files, including the primary URL file
 * Contains settings split into `base`, `local`, `production` and `development`
