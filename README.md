@@ -125,6 +125,16 @@ within each relevant app, sometimes it makes more sense to build an app
 specifically for the API. This is where all the serializers, renderers, and views
 are placed. Therefore, the name of the app should reflect its API version
 
+##### `api-versioning`
+It might often be necessary to support multiple versions of an API throughout the lifetime of a project. Therefore, we're adding in support right from the start.
+
+For different API versions, we're assuming the following will change:
+- Serializers
+- Views
+- URLs
+- Services
+
+Whereas the `model`s will be shared.
 
 ### `config`
 * Contains project configuration files, including the primary URL file
