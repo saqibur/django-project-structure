@@ -5,64 +5,63 @@ either strictly through the `django-rest-framework` or just `django`.
 The project is meant to be easily clonable, and used as the starter template for
 the next big thing our team develops.
 
+## Getting Started
+1. Clone the repo from GitHub/BitBucket
+1. Delete the `.git` folder
+1. Remove/add anything as you see fit
+1. Initialize as a new git repository for your own project
+1. DONE.
+
+
+### Creating an App
+1. Create a folder with the app name in `apps`. For example: `poll`
+1. Run `python manage.py startapp poll apps/poll` from the root directory of the project
+
 
 ## Scope
-Develop a structure for both `django-rest-framework` and `django` projects.
-Easily clonable when starting new projects
-Folder structure only, not “best practices”
-No questions, instead we’ll have everything raised as an issue in a repository
-We won’t be talking about best practices in implementation details
-We’ll hold all questions in a GitHub repository, so things can move forward
-The discussions also serve historic significance - people can backtrack why some
-decisions were made.
+- Goal: Develop a structure for both `django-rest-framework` and `django` projects.
+- Easily clonable when starting new projects
+- Folder structure only, not “best practices”
+- We won’t be enforcing about best practices in implementation details
+- We’ll hold all questions in a GitHub repository, so things can move forward
+- The discussions also serve historic significance - people can backtrack why some decisions were made.
 
 
 ## Project Tree
 ```bash
 .
 ├── apps
-│   ├── app_one # A Django Rest Framework Project
-│   │   ├── api
-│   │   │   ├── v1
-│   │   │   │   ├── __init__.py
-│   │   │   │   ├── serializers.py
-│   │   │   │   ├── services.py
-│   │   │   │   ├── tests.py
-│   │   │   │   ├── urls.py
-│   │   │   │   └── views.py
-│   │   │   ├── v2
-│   │   │   │   ├── __init__.py
-│   │   │   │   ├── serializers.py
-│   │   │   │   ├── services.py
-│   │   │   │   ├── tests.py
-│   │   │   │   ├── urls.py
-│   │   │   │   └── views.py
-│   │   │   └── __init__.py
-│   │   ├── management
-│   │   │   ├── commands.py
-│   │   │   └── __init__.py
-│   │   ├── migrations
-│   │   │   └── __init__.py
-│   │   ├── templates
-│   │   ├── tests
-│   │   ├── admin.py
-│   │   ├── apps.py
-│   │   ├── __init__.py
-│   │   ├── models.py
-│   │   ├── urls.py
-│   │   ├── utils.py
-│   │   └── views.py
-│   └── app_two # A normal Django project
+│   └── example_api # A django rest app
+│       ├── api
+│       │   ├── v1
+│       │   │   ├── __init__.py
+│       │   │   ├── serializers.py
+│       │   │   ├── services.py
+│       │   │   ├── tests.py
+│       │   │   ├── urls.py
+│       │   │   └── views.py
+│       │   ├── v2
+│       │   │   ├── __init__.py
+│       │   │   ├── serializers.py
+│       │   │   ├── services.py
+│       │   │   ├── tests.py
+│       │   │   ├── urls.py
+│       │   │   └── views.py
+│       │   └── __init__.py
+│       ├── management
+│       │   ├── commands
+│       │   │   └── command.py
+│       │   └── __init__.py
 │       ├── migrations
 │       │   └── __init__.py
 │       ├── templates
+│       ├── tests
 │       ├── admin.py
 │       ├── apps.py
 │       ├── __init__.py
 │       ├── models.py
-│       ├── service.py
-│       ├── tests.py
 │       ├── urls.py
+│       ├── utils.py
 │       └── views.py
 ├── config
 │   ├── settings
@@ -106,16 +105,13 @@ decisions were made.
 Each `app` should be designed in way to be pluggable, that is, dragged and dropped
 into any other project and it’ll work independently.
 
-* We won’t have a `core` in our projects. This should be maintained separately
-and versioned accordingly as a library.
-
 ### `apps`
-* A mother-folder containing all apps for our project.
-* An app can be a django template project, or an api
+* A mother-folder containing all apps for our project. Congruent to any JS-framework's `src` folder.
+* An app can be a django template project, or an API.
 
-#### `api`
+### `api`
 * We like to place all our API components into a package within an app called
-api/. That allows us to isolate our API components in a consistent location. If
+`api`. For example, in this repository it's the `example_api/api` folder. That allows us to isolate our API components in a consistent location. If
 we were to put it in the root of our app, then we would end up with a huge list
 of API-specific modules in the general area of the app.
 
@@ -125,7 +121,7 @@ within each relevant app, sometimes it makes more sense to build an app
 specifically for the API. This is where all the serializers, renderers, and views
 are placed. Therefore, the name of the app should reflect its API version
 
-##### `api-versioning`
+### `api-versioning`
 It might often be necessary to support multiple versions of an API throughout the lifetime of a project. Therefore, we're adding in support right from the start.
 
 For different API versions, we're assuming the following will change:
@@ -134,23 +130,22 @@ For different API versions, we're assuming the following will change:
 - URLs
 - Services
 
-Whereas the `model`s will be shared.
+`model`s can be thought of as shared between versions. Therefore, migrating changes should be versioned carefully without breaking different versions of the API.
 
-* How do you define a version 2?
 
+### What's Version 2?
 Currently we're proposing that major changes to the following, constitutes a new API version:
 1. Representation of data, either for submission or retrieval
-2. Major optimizations
-3. Major code reorganization and code refactor
-
+1. Major optimizations
+1. Major code reorganization and code refactor
 
 ### `config`
 * Contains project configuration files, including the primary URL file
-* Contains settings split into `base`, `local`, `production` and `development`
+* Contains settings split into `base`, `local`, `production` and `development`.
 
 
 ### `deployments`
-* Contains Docker and nginx specific files for deploying in different
+* Contains Docker, Docker-Compose and nginx specific files for deploying in different
 environments
 
 
@@ -158,7 +153,7 @@ environments
 * We’ll have CHANGELOG.md
 * We’ll have CONTRIBUTING.md
 * We’ll have deployment instructions
-* We’ll have local instructions
+* We’ll have local startup instructions
 
 
 ### `services`
@@ -175,4 +170,3 @@ environments
 - [Cookiecutter Django](https://github.com/cookiecutter/cookiecutter-django)
 - [HackSoft Django Style Guide](https://github.com/HackSoftware/Django-Styleguide)
 - [Radoslav Georgiev - Django Structure for Scale and Longevity](https://www.youtube.com/watch?v=yG3ZdxBb1oo)
-- Vaccina Backend Projects (namely `backend-healthcheck`)
