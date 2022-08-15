@@ -65,13 +65,7 @@ the next big thing our team develops.
 │       └── views.py
 ├── common # An optional folder containing common "stuff" for the entire project
 ├── config
-│   ├── settings
-│   │   ├── base.py
-│   │   ├── development.py
-│   │   ├── __init__.py
-│   │   ├── local.py
-│   │   ├── local_template.py
-│   │   └── production.py
+│   ├── settings.py
 │   ├── asgi.py
 │   ├── __init__.py
 │   ├── urls.py
@@ -142,7 +136,9 @@ Currently we're proposing that major changes to the following, constitutes a new
 
 ### `config`
 * Contains project configuration files, including the primary URL file
-* Contains settings split into `base`, `local`, `production` and `development`.
+* ~~Contains settings split into `base`, `local`, `production` and `development`.~~. Update: As environment
+specific variables will be handled using environment variables, we've deemed it unnecessary to have
+separate settings files.
 
 
 ### `deployments`
