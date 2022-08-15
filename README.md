@@ -2,7 +2,7 @@
 This is a template/project structure for developing django-based applications -
 either strictly through the `django-rest-framework` or just `django`.
 
-The project is meant to be easily clonable, and used as the starter template for
+The project is meant to be easily clone-able, and used as the starter template for
 the next big thing our team develops.
 
 ## Getting Started
@@ -21,7 +21,7 @@ success page provided by Django at [http://127.0.0.1:8000/](http://127.0.0.1:800
 
 ## Scope
 - Goal: Develop a structure for both `django-rest-framework` and `django` projects.
-- Easily clonable when starting new projects
+- Easily clone-able when starting new projects
 - Folder structure only, not “best practices”
 - We won’t be enforcing about best practices in implementation details
 - We’ll hold all questions in a GitHub repository, so things can move forward
@@ -98,7 +98,7 @@ success page provided by Django at [http://127.0.0.1:8000/](http://127.0.0.1:800
 ```
 
 ## Rationale
-Each `app` should be designed in way to be pluggable, that is, dragged and dropped
+Each `app` should be designed in way to be plug-able, that is, dragged and dropped
 into any other project and it’ll work independently.
 
 ### `apps`
