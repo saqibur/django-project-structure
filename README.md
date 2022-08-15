@@ -63,6 +63,7 @@ the next big thing our team develops.
 │       ├── urls.py
 │       ├── utils.py
 │       └── views.py
+├── common # An optional folder containing common "stuff" for the entire project
 ├── config
 │   ├── settings
 │   │   ├── base.py
