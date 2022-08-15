@@ -10,7 +10,8 @@ the next big thing our team develops.
 1. Delete the `.git` folder
 1. Remove/add anything as you see fit
 1. Initialize as a new git repository for your own project
-1. DONE.
+1. Run the project using `python manage.py runserver` and you should see the default
+success page provided by Django at [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
 
 
 ### Creating an App
