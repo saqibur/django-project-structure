@@ -135,6 +135,13 @@ Currently we're proposing that major changes to the following, constitutes a new
 1. Major optimizations
 1. Major code reorganization and code refactor
 
+
+### Exception handling
+You should probably add a custom exception handler to your project based on
+who consumes your APIs. To learn how to create a custom exception handler,
+you can check out the Django Rest Framework documentation at:
+https://www.django-rest-framework.org/api-guide/exceptions/#custom-exception-handling
+
 ### `config`
 * Contains project configuration files, including the primary URL file
 * ~~Contains settings split into `base`, `local`, `production` and `development`.~~. Update: As environment
