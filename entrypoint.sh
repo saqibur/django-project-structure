@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
-python3 manage.py migrate --noinput
-python3 manage.py collectstatic --noinput
+python manage.py migrate --noinput
+python manage.py collectstatic --noinput
 
 exec "$@"
