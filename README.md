@@ -6,7 +6,7 @@ The project is meant to be easily clone-able, and used as the starter template f
 the next big thing our team develops.
 
 ## Getting Started
-1. Clone the repo from GitHub/BitBucket
+1. Clone the repo from GitHub
 1. Delete the `.git` folder
 1. Remove/add anything as you see fit
 1. Initialize as a new git repository for your own project
