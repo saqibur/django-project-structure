@@ -181,3 +181,4 @@ https://www.django-rest-framework.org/api-guide/exceptions/#custom-exception-han
 - [HackSoft Django Style Guide](https://github.com/HackSoftware/Django-Styleguide)
 - [Radoslav Georgiev - Django Structure for Scale and Longevity](https://www.youtube.com/watch?v=yG3ZdxBb1oo)
 - [Build APIs You Won't Hate](https://apisyouwonthate.com/books/build-apis-you-wont-hate/)
+- [Tuxedo Style Guides](https://github.com/saqibur/tuxedo)
