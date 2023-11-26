@@ -1,5 +1,5 @@
 {
-    "project_name": "Cookiecutter Website Simple",
+    "project_name": "Django Project Cookiecutter",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
     "author": "Anonymous"
-  }
+}
