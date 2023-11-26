@@ -173,6 +173,17 @@ you can check out the Django Rest Framework documentation at:
 https://www.django-rest-framework.org/api-guide/exceptions/#custom-exception-handling
 
 
+## FAQ
+> Why not just make a cookiecutter out of this?
+
+Honestly, GitHub templates are so much easier. It's a one-click solution and
+you're good to go. If we want to turn this into a cookiecutter, we'd have to also
+start deciding sensible defaults, for instance, sentry, DRF version, formatters,
+linters, etc. And that's something better left to the developer. Although, I am
+playing around with the idea of having a cookiecutter with those sensible
+defaults, but let's hope we have time to work on it on the `cookiecutter` branch.
+
+
 ## References
 - [Two Scoops of Django by Daniel and Audrey Feldroy](https://www.feldroy.com/books/two-scoops-of-django-3-x)
 - [Django Best Practices](https://django-best-practices.readthedocs.io/en/latest/index.html)
