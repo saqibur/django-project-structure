@@ -1,0 +1,5 @@
+{
+    "project_name": "Cookiecutter Website Simple",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+    "author": "Anonymous"
+  }
