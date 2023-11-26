@@ -18,13 +18,12 @@ for the next big thing you develop. Note, this is a folder structure only, not
 
 
 ## Getting Started
-1. Clone the repo from GitHub
-1. Delete the `.git` folder
-1. Remove/add anything as you see fit
-1. Initialize as a new git repository for your own project
-1. Run the project using `python manage.py runserver` and you should see the default
-success page provided by Django at [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
-
+1. Since this is a template repository, simply hit "Use this template" on GitHub
+and follow the instructions. Otherwise, you can just clone the repo, remove/add
+anything you see fit.
+1. Run the project using `python manage.py runserver` and you should see the
+default success page provided by Django at
+[http://127.0.0.1:8000/](http://127.0.0.1:8000/).
 
 ### Creating an App
 1. Create a folder with the app name in `apps`. For example: `poll`
