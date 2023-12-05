@@ -1,6 +1,9 @@
 # Current Project Ignores
 config/settings/local.py
 
+# OS ignores
+*.DS_Store
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
