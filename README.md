@@ -24,6 +24,7 @@ anything you see fit.
 1. Run the project using `python manage.py runserver` and you should see the
 default success page provided by Django at
 [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
+a. Or `python manage.py runserver <port>` if you need to run using a different port.
 
 ### Creating an App
 1. Create a folder with the app name in `apps`. For example: `poll`
