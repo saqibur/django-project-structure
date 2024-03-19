@@ -24,6 +24,17 @@ anything you see fit.
 1. Run the project using `python manage.py runserver` and you should see the
 default success page provided by Django at
 [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
+1. [Optional] If you want to configure database, in the `DATABASE` section of `settings.py` we have added `postgresql` as the default `DATABASE` (As most of the application are using it). You can rollback to the `sqlite` by adding the following code snippet, removing the current one.
+
+```bash
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+```
+
 
 ### Creating an App
 1. Create a folder with the app name in `apps`. For example: `poll`
