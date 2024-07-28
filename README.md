@@ -24,7 +24,7 @@ anything you see fit.
 1. Run the project using `python manage.py runserver` and you should see the
 default success page provided by Django at
 [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
-1. [Optional] If you want to configure database, in the `DATABASE` section of `settings.py` we have added `postgresql` as the default `DATABASE` (As most of the application are using it). You can rollback to the `sqlite` by adding the following code snippet, removing the current one.
+1. [Optional] If you want to configure database, in the `DATABASE` section of `settings.py` we have added `postgresql` as the default `DATABASE` (As most of the application are using it). You can roll back to the `sqlite` by adding the following code snippet, removing the current one.
 
 ```bash
 DATABASES = {
@@ -113,7 +113,7 @@ into any other project and it’ll work independently.
 * A mother-folder containing all apps for our project. Congruent to any
 JS-framework's `src` folder. If you really wanted to, you could even call it the
 `src` folder. Again, it's up to you.
-* An app can be a django template project, or an rest framework API.
+* An app can be a django template project, or a rest framework API.
 
 ### `services`
 * We’ll be writing business logic in services instead of anywhere else.
@@ -158,7 +158,7 @@ endpoints to ensure full compatibility.
 
 
 #### What's `v2` of an API?
-Currently we're proposing that major changes to the following, constitutes a new API version:
+Currently, we're proposing that major changes to the following constitutes a new API version:
 1. Representation of data, either for submission or retrieval
 1. Major optimizations
 1. Major code reorganization and code refactor
