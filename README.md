@@ -95,7 +95,6 @@ project
 │   ├── local.txt                   # Only for a local server (example: docs, performance testing, etc.)
 │   └── production.txt              # Production only
 ├── static/                         # Your static files
-├── static/                         # Your static files
 ├── .env.example                    # An example of your .env configurations. Add necessary comments.
 ├── .gitignore                      # https://github.com/github/gitignore/blob/main/Python.gitignore
 ├── entrypoint.sh                   # Any bootstrapping necessary for your application
