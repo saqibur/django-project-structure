@@ -215,3 +215,9 @@ defaults, but let's hope we have time to work on it on the `cookiecutter` branch
 - [Build APIs You Won't Hate](https://apisyouwonthate.com/books/build-apis-you-wont-hate/)
 - [Tuxedo Style Guides](https://github.com/saqibur/tuxedo)
 - [Django Anti Patterns](https://www.django-antipatterns.com/)
+
+
+## Documentation
+* Copy README.md to `mkdocs` folder
+* Build: `mkdocs build -d docs`
+* Serve: `mkdocs serve`
