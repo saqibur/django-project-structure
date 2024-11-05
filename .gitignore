@@ -1,5 +1,4 @@
 # Current Project Ignores
-config/settings/local.py
 
 # OS ignores
 *.DS_Store
