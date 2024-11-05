@@ -202,3 +202,4 @@ defaults, but let's hope we have time to work on it on the `cookiecutter` branch
 - [Radoslav Georgiev - Django Structure for Scale and Longevity](https://www.youtube.com/watch?v=yG3ZdxBb1oo)
 - [Build APIs You Won't Hate](https://apisyouwonthate.com/books/build-apis-you-wont-hate/)
 - [Tuxedo Style Guides](https://github.com/saqibur/tuxedo)
+- [Django Anti Patterns](https://www.django-antipatterns.com/)
