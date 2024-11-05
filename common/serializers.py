@@ -1,5 +1,7 @@
-from rest_framework.serializers import ModelSerializer
+from typing import List
 
+from rest_framework.request import Request
+from rest_framework.serializers import ModelSerializer, Serializer
 
 
 class DynamicFieldsModelSerializer(ModelSerializer):
@@ -21,3 +23,21 @@ class DynamicFieldsModelSerializer(ModelSerializer):
             existing = set(self.fields)
             for field_name in existing - allowed:
                 self.fields.pop(field_name)
+
+
+def create_validated_instance(serializer: Serializer, request: Request):
+    serializer = serializer(data=request.data, context={"request": request})
+    serializer.is_valid(raise_exception=True)
+    return serializer.save(), serializer.validated_data
+
+
+def get_validated_data(
+    serializer: Serializer, request: Request, fields: List[str] = None
+):
+    if fields and issubclass(serializer, DynamicFieldsModelSerializer):
+        serializer = serializer(fields=fields, data=request.data)
+    else:
+        serializer = serializer(data=request.data)
+
+    serializer.is_valid(raise_exception=True)
+    return serializer.validated_data
