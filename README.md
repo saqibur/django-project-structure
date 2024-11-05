@@ -1,6 +1,6 @@
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Python 3.12.3](https://img.shields.io/badge/python-3.12.3-blue.svg)](https://www.python.org/downloads/release/python-3123/)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://pre-commit.com/)
 
 ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
 ![DjangoREST](https://img.shields.io/badge/DJANGO-REST-ff1709?style=for-the-badge&logo=django&logoColor=white&color=ff1709&labelColor=gray)
@@ -10,11 +10,19 @@
 
 # Django Project Structure
 This is a template/project structure for developing django-based applications -
-either strictly through the `django-rest-framework` or just `django`.
+using `django-rest-framework` along with `django`.
 
 The project is meant to be easily clone-able, and used as the starter template
 for the next big thing you develop. Note, this is a folder structure only, not
 “best practices”.
+
+
+## Some batteries included:
+* [Django Storages](https://django-storages.readthedocs.io/en/stable/) - To integrate with different types of storages
+* [Django Rest Framework](https://www.django-rest-framework.org/) - For API development
+* [Django CORS Headers](https://github.com/adamchainz/django-cors-headers) - To allow requests from other origins
+* [Sentry](https://docs.sentry.io/platforms/python/) - For crashes
+* [Gunicorn](https://gunicorn.org/) - As a web server
 
 
 ## Getting Started
