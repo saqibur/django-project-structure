@@ -1,5 +1,16 @@
 [tool.black]
 line-length = 79
-target-version = ['py39']
+target-version = ['py312']
 include = '\.pyi?$'
 extend-exclude = 'migrations/*'
+
+
+[tool.ruff.lint.isort]
+case-sensitive = true
+force-single-line = true
+section-order = ["future", "standard-library", "first-party", "django", "rest_framework", "third-party", "local-folder"]
+
+
+[tool.ruff.lint.isort.sections]
+"django" = ["django"]
+"rest_framework" = ["rest_framework"]
