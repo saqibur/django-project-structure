@@ -1,5 +1,5 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Python 3.10.8](https://img.shields.io/badge/python-3.10.8-blue.svg)](https://www.python.org/downloads/release/python-3108//)
+[![Python 3.12.3](https://img.shields.io/badge/python-3.12.3-blue.svg)](https://www.python.org/downloads/release/python-3123/)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
 ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
@@ -24,7 +24,10 @@ anything you see fit.
 1. Run the project using `python manage.py runserver` and you should see the
 default success page provided by Django at
 [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
-1. [Optional] If you want to configure database, in the `DATABASE` section of `settings.py` we have added `postgresql` as the default `DATABASE` (As most of the application are using it). You can roll back to the `sqlite` by adding the following code snippet, removing the current one.
+1. [Optional] If you want to configure database, in the `DATABASE` section of
+`settings.py` we have added `postgresql` as the default `DATABASE` (As most of
+the application are using it). You can roll back to the `sqlite` by adding the
+following code snippet, removing the current one.
 
 ```bash
 DATABASES = {
@@ -158,7 +161,8 @@ endpoints to ensure full compatibility.
 
 
 #### What's `v2` of an API?
-Currently, we're proposing that major changes to the following constitutes a new API version:
+Currently, we're proposing that major changes to the following constitutes a new
+API version:
 1. Representation of data, either for submission or retrieval
 1. Major optimizations
 1. Major code reorganization and code refactor
