@@ -1,0 +1,9 @@
+Django
+djangorestframework
+django-cors-headers
+django-filter
+django-storages
+psycopg2-binary==2.9.9
+Pillow
+sentry-sdk
+gunicorn

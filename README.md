@@ -1,6 +1,6 @@
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Python 3.10.8](https://img.shields.io/badge/python-3.10.8-blue.svg)](https://www.python.org/downloads/release/python-3108//)
+[![Python 3.12.3](https://img.shields.io/badge/python-3.12.3-blue.svg)](https://www.python.org/downloads/release/python-3123/)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://pre-commit.com/)
 
 ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
 ![DjangoREST](https://img.shields.io/badge/DJANGO-REST-ff1709?style=for-the-badge&logo=django&logoColor=white&color=ff1709&labelColor=gray)
@@ -10,11 +10,19 @@
 
 # Django Project Structure
 This is a template/project structure for developing django-based applications -
-either strictly through the `django-rest-framework` or just `django`.
+using `django-rest-framework` along with `django`.
 
 The project is meant to be easily clone-able, and used as the starter template
 for the next big thing you develop. Note, this is a folder structure only, not
 “best practices”.
+
+
+## Some batteries included:
+* [Django Storages](https://django-storages.readthedocs.io/en/stable/) - To integrate with different types of storages
+* [Django Rest Framework](https://www.django-rest-framework.org/) - For API development
+* [Django CORS Headers](https://github.com/adamchainz/django-cors-headers) - To allow requests from other origins
+* [Sentry](https://docs.sentry.io/platforms/python/) - For crashes
+* [Gunicorn](https://gunicorn.org/) - As a web server
 
 
 ## Getting Started
@@ -23,7 +31,22 @@ and follow the instructions. Otherwise, you can just clone the repo, remove/add
 anything you see fit.
 1. Run the project using `python manage.py runserver` and you should see the
 default success page provided by Django at
-[http://127.0.0.1:8000/](http://127.0.0.1:8000/). Or `python manage.py runserver <port>` if you need to run using a different port.
+[http://127.0.0.1:8000/](http://127.0.0.1:8000/). Or `python manage.py runserver <port>`
+if you need to run using a different port.
+
+1. [Optional] If you want to configure database, in the `DATABASE` section of
+`settings.py` we have added `postgresql` as the default `DATABASE` (As most of
+the application are using it). You can roll back to the `sqlite` by adding the
+following code snippet, removing the current one.
+
+```bash
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+```
 
 ### Creating an App
 1. Create a folder with the app name in `apps`. For example: `poll`
@@ -34,60 +57,59 @@ project
 ## Project Tree
 ``` bash
 .
-├── apps
-│   └── example # A django rest app
-│       ├── api
-│       │   ├── v1 # Only the "presentation" layer exists here.
+├── apps/
+│   └── example/                    # A django rest app
+│       ├── api/
+│       │   ├── v1/                 # Only the "presentation" layer exists here.
 │       │   │   ├── __init__.py
 │       │   │   ├── serializers.py
 │       │   │   ├── urls.py
 │       │   │   └── views.py
-│       │   ├── v2 # Only the "presentation" layer exists here.
+│       │   ├── v2                  # Only the "presentation" layer exists here.
 │       │   │   ├── __init__.py
 │       │   │   ├── serializers.py
 │       │   │   ├── urls.py
 │       │   │   └── views.py
 │       │   └── __init__.py
-│       ├── fixtures # Constant "seeders" to populate your database
-│       ├── management
-│       │   ├── commands # Try and write some database seeders here
+│       ├── fixtures/               # Constant "seeders" to populate your database
+│       ├── management/
+│       │   ├── commands/           # Try and write some database seeders here
 │       │   │   └── command.py
 │       │   └── __init__.py
-│       ├── migrations
+│       ├── migrations/
 │       │   └── __init__.py
-│       ├── templates # App-specific templates go here
-│       ├── tests # All your integration and unit tests for an app go here.
+│       ├── templates/              # App-specific templates go here
+│       ├── tests/                  # All your integration and unit tests for an app go here.
+│       ├── __init__.py
 │       ├── admin.py
 │       ├── apps.py
-│       ├── __init__.py
 │       ├── models.py
-│       ├── services.py # Your business logic and data abstractions go here.
+│       ├── services.py             # Your business logic and data abstractions go here.
 │       ├── urls.py
 │       └── views.py
-├── common # An optional folder containing common "stuff" for the entire project
-├── config
-│   ├── settings.py
-│   ├── asgi.py
+├── common/                         # An optional folder containing common "stuff" for the entire project
+├── config/
 │   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
 │   ├── urls.py
 │   └── wsgi.py
-├── deployments # Isolate Dockerfiles and docker-compose files here.
-├── docs
+├── deployments/                    # Isolate Dockerfiles and docker-compose files here.
+├── docs/
 │   ├── CHANGELOG.md
 │   ├── CONTRIBUTING.md
 │   ├── deployment.md
 │   ├── local-development.md
 │   └── swagger.yaml
-├── requirements
-│   ├── common.txt # Same for all environments
-│   ├── development.txt # Only for a development server
-│   ├── local.txt # Only for a local server (example: docs, performance testing, etc.)
-│   └── production.txt # Production only
-├── static # Your static files
-├── .env.example # An example of your .env configurations. Add necessary comments.
-├── static # Your static files
-├── .gitignore # https://github.com/github/gitignore/blob/main/Python.gitignore
-├── entrypoint.sh # Any bootstrapping necessary for your application
+├── requirements/
+│   ├── common.txt                  # Same for all environments
+│   ├── development.txt             # Only for a development server
+│   ├── local.txt                   # Only for a local server (example: docs, performance testing, etc.)
+│   └── production.txt              # Production only
+├── static/                         # Your static files
+├── .env.example                    # An example of your .env configurations. Add necessary comments.
+├── .gitignore                      # https://github.com/github/gitignore/blob/main/Python.gitignore
+├── entrypoint.sh                   # Any bootstrapping necessary for your application
 ├── manage.py
 ├── pytest.ini
 └── README.md
@@ -103,7 +125,7 @@ into any other project and it’ll work independently.
 * A mother-folder containing all apps for our project. Congruent to any
 JS-framework's `src` folder. If you really wanted to, you could even call it the
 `src` folder. Again, it's up to you.
-* An app can be a django template project, or an rest framework API.
+* An app can be a django template project, or a rest framework API.
 
 ### `services`
 * We’ll be writing business logic in services instead of anywhere else.
@@ -148,7 +170,8 @@ endpoints to ensure full compatibility.
 
 
 #### What's `v2` of an API?
-Currently we're proposing that major changes to the following, constitutes a new API version:
+Currently, we're proposing that major changes to the following constitutes a new
+API version:
 1. Representation of data, either for submission or retrieval
 1. Major optimizations
 1. Major code reorganization and code refactor
@@ -192,3 +215,4 @@ defaults, but let's hope we have time to work on it on the `cookiecutter` branch
 - [Radoslav Georgiev - Django Structure for Scale and Longevity](https://www.youtube.com/watch?v=yG3ZdxBb1oo)
 - [Build APIs You Won't Hate](https://apisyouwonthate.com/books/build-apis-you-wont-hate/)
 - [Tuxedo Style Guides](https://github.com/saqibur/tuxedo)
+- [Django Anti Patterns](https://www.django-antipatterns.com/)

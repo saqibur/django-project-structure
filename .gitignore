@@ -1,5 +1,5 @@
 # Current Project Ignores
-config/settings/local.py
+.ruff_cache/
 
 # OS ignores
 *.DS_Store

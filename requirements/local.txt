@@ -1,1 +1,4 @@
 -r common.txt
+ruff
+pre-commit
+pytest-django
