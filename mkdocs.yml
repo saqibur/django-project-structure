@@ -2,14 +2,14 @@ site_name: Django Project Structure
 site_url: https://github.com/saqibur/django-project-structure
 site_author: Saqibur Rahman
 site_description: >-
-  This is a template/project structure for developing django-based applications
-  - either strictly through the django-rest-framework or just django.
+  This is a template/project structure for developing django-based applications -
+  using django-rest-framework along with django.
 
 repo_name: saqibur/django-project-structure
 repo_url: https://github.com/saqibur/django-project-structure
 
 # Copyright
-copyright: Copyright &copy; 2022 - 2023 Saqibur Rahman
+copyright: Copyright &copy; 2022 - 2024 Saqibur Rahman
 
 
 # Add multiple sources for the docs
