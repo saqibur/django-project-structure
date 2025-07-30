@@ -31,7 +31,9 @@ and follow the instructions. Otherwise, you can just clone the repo, remove/add
 anything you see fit.
 1. Run the project using `python manage.py runserver` and you should see the
 default success page provided by Django at
-[http://127.0.0.1:8000/](http://127.0.0.1:8000/).
+[http://127.0.0.1:8000/](http://127.0.0.1:8000/). Or `python manage.py runserver <port>`
+if you need to run using a different port.
+
 1. [Optional] If you want to configure database, in the `DATABASE` section of
 `settings.py` we have added `postgresql` as the default `DATABASE` (As most of
 the application are using it). You can roll back to the `sqlite` by adding the
@@ -45,7 +47,6 @@ DATABASES = {
     }
 }
 ```
-
 
 ### Creating an App
 1. Create a folder with the app name in `apps`. For example: `poll`
@@ -79,6 +80,7 @@ project
 │       │   └── __init__.py
 │       ├── templates/              # App-specific templates go here
 │       ├── tests/                  # All your integration and unit tests for an app go here.
+│       │   └── __init__.py
 │       ├── __init__.py
 │       ├── admin.py
 │       ├── apps.py
